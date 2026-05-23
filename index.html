@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Intelligence.DigitalAI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --border: #1e1e2e;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --text: #e8e8f0;
+      --muted: #6b6b85;
+      --heading: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* Background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(108,99,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108,99,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(108,99,255,0.08) 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow2 {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,212,170,0.06) 0%, transparent 70%);
+      bottom: -100px;
+      left: -100px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+      background: rgba(10,10,15,0.8);
+      backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+    }
+
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--heading);
+      letter-spacing: -0.3px;
+    }
+
+    .logo-text span {
+      color: var(--accent2);
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 32px 100px;
+    }
+
+    .hero {
+      margin-bottom: 64px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(108,99,255,0.1);
+      border: 1px solid rgba(108,99,255,0.2);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 800;
+      color: var(--heading);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    h1 .gradient {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .meta-item .dot {
+      width: 4px;
+      height: 4px;
+      background: var(--accent2);
+      border-radius: 50%;
+    }
+
+    .meta-item strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .intro-box {
+      background: linear-gradient(135deg, rgba(108,99,255,0.08), rgba(0,212,170,0.05));
+      border: 1px solid rgba(108,99,255,0.15);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.3px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2::before {
+      content: '';
+      width: 3px;
+      height: 20px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2));
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    p {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 14px;
+      font-weight: 300;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 14px;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+      font-size: 13px;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+
+    .contact-card h2 {
+      margin-bottom: 24px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-value {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .contact-value a {
+      color: var(--accent2);
+      text-decoration: none;
+    }
+
+    .contact-value a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 32px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    footer strong {
+      color: var(--accent2);
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 80px; }
+      .header-inner { padding: 0 20px; }
+      .intro-box { padding: 20px; }
+      .contact-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-mark">ID</div>
+    <div class="logo-text">Intelligence.<span>DigitalAI</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="badge">Legal Document</div>
+    <h1>Privacy <span class="gradient">Policy</span></h1>
+    <div class="hero-meta">
+      <div class="meta-item"><span class="dot"></span> <strong>Agency:</strong> Intelligence.DigitalAI</div>
+      <div class="meta-item"><span class="dot"></span> <strong>Effective Date:</strong> May 23, 2025</div>
+      <div class="meta-item"><span class="dot"></span> <strong>Last Updated:</strong> May 23, 2025</div>
+    </div>
+  </div>
+
+  <div class="intro-box">
+    At <strong>Intelligence.DigitalAI</strong>, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you use our social media automation and digital marketing services. By using our services, you agree to the terms outlined in this policy.
+  </div>
+
+  <div class="section">
+    <h2>1. Information We Collect</h2>
+    <p>When you use our services, we may collect the following types of information:</p>
+    <ul>
+      <li>Your name, email address, and contact information</li>
+      <li>Facebook and Instagram account information (pages, profile data)</li>
+      <li>Social media access tokens required to manage your accounts</li>
+      <li>Content you provide for publishing (posts, images, captions)</li>
+      <li>Usage data and analytics related to your social media pages</li>
+      <li>Business information such as your company name and industry</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>2. How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Publish and schedule posts on your Facebook and Instagram accounts on your behalf</li>
+      <li>Manage and automate your social media presence as per your instructions</li>
+      <li>Respond to comments and messages on your social media pages</li>
+      <li>Provide analytics and performance reports for your accounts</li>
+      <li>Communicate with you about our services, updates, and support</li>
+      <li>Improve and optimize our automation workflows and tools</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. Meta Platform Data Usage</h2>
+    <p>Our services integrate with Meta's platforms (Facebook and Instagram) through the official Meta API. We access your Facebook Pages and Instagram accounts only with your explicit permission. Specifically:</p>
+    <ul>
+      <li>We only access data necessary to provide our social media management services</li>
+      <li>We do not sell your Meta account data to any third parties</li>
+      <li>Access tokens are stored securely and used only for authorized actions</li>
+      <li>You can revoke our access at any time through your Facebook Settings under Apps and Websites</li>
+      <li>We comply with all Meta Platform Policies and Terms of Service</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Data Sharing & Third Parties</h2>
+    <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
+    <ul>
+      <li>With Meta/Facebook as required to provide social media management services</li>
+      <li>With automation tools (such as n8n) used internally to manage your accounts</li>
+      <li>When required by law or to protect our legal rights</li>
+      <li>With your explicit written consent</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>5. Data Security</h2>
+    <p>We take the security of your data seriously. We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes:</p>
+    <ul>
+      <li>Encrypted storage of access tokens and sensitive credentials</li>
+      <li>Restricted access to your account data — only authorized team members can access it</li>
+      <li>Regular security reviews of our systems and workflows</li>
+      <li>Secure HTTPS connections for all data transmission</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>6. Data Retention</h2>
+    <p>We retain your personal data only for as long as necessary to provide our services or as required by law. When you terminate our services, we will delete your access tokens and personal data within 30 days of your request.</p>
+  </div>
+
+  <div class="section">
+    <h2>7. Your Rights</h2>
+    <p>You have the following rights regarding your personal data:</p>
+    <ul>
+      <li>Right to access the personal data we hold about you</li>
+      <li>Right to request correction of inaccurate data</li>
+      <li>Right to request deletion of your personal data</li>
+      <li>Right to withdraw consent and revoke app access at any time</li>
+      <li>Right to data portability — receive your data in a portable format</li>
+    </ul>
+    <p>To exercise any of these rights, please contact us using the details below.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Cookies</h2>
+    <p>Our privacy policy page itself does not use cookies. However, Meta's platform may use cookies when you authorize our application through their OAuth login flow. Please refer to Meta's Privacy Policy for more information on their cookie usage.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by email or by posting a notice on this page. Your continued use of our services after any changes constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <div class="contact-card">
+    <h2>10. Contact Us</h2>
+    <p style="margin-bottom: 24px;">If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please reach out to us:</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="contact-label">Agency Name</span>
+        <span class="contact-value">Intelligence.DigitalAI</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Owner</span>
+        <span class="contact-value">Sahil Sharma</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Email</span>
+        <span class="contact-value"><a href="mailto:intelligence.digitalai@gmail.com">intelligence.digitalai@gmail.com</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Phone</span>
+        <span class="contact-value"><a href="tel:+919729899119">+91 9729899119</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Location</span>
+        <span class="contact-value">Yamunanagar, Haryana, India</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 <strong>Intelligence.DigitalAI</strong> — Sahil Sharma. All rights reserved. Yamunanagar, Haryana, India.</p>
+</footer>
+
+</body>
+</html>
